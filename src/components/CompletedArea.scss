@@ -1,0 +1,16 @@
+.completedArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .newAvatar {
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .saveBtn {
+    display: inline-block;
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+  }
+}

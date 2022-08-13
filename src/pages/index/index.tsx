@@ -1,6 +1,10 @@
 import { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import OriginalArea from '../../components/OriginalArea'
+import SourcesArea from '../../components/SourcesArea'
+import OperatingArea from '../../components/OperatingArea'
+import CompletedArea from '../../components/CompletedArea'
 
 export default class Index extends Component {
 
@@ -17,7 +21,10 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
+        <OriginalArea></OriginalArea>
+        <SourcesArea></SourcesArea>
+        <OperatingArea></OperatingArea>
+        <CompletedArea></CompletedArea>
       </View>
     )
   }
