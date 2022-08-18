@@ -1,18 +1,30 @@
 import { View, Text, Button, Image } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import { useState } from 'react'
+import { atom, useRecoilState } from 'recoil'
 // import React from 'react'
 import './OriginalArea.scss'
+import { avatarURL } from './../store'
 
 export default function OriginalArea() {
+  const [myAvatar, setMyAvatar] = useRecoilState(avatarURL)
+
   // 如果发现本地缓存有旧的头像，那就直接使用
   let oldValue = Taro.getStorageSync('avatarUrl')
+  if (oldValue) {
+    setMyAvatar(oldValue)
+  }
 
-  const [myAvatar, setMyAvatar] = useState(oldValue || '')
+
+  // // 如果发现本地缓存有旧的头像，那就直接使用
+  // let oldValue = Taro.getStorageSync('avatarUrl')
+
+  // const [myAvatar, setMyAvatar] = useState(oldValue || '')
 
   const onChooseAvatar = (avatarInfo) => {
     const avatarUrl = avatarInfo.detail.avatarUrl
-    console.log('avatarInfo', avatarUrl)
+
+    // console.log('avatarInfo', avatarUrl)
     setMyAvatar(avatarUrl)
     // 获取一次后即存储到本地
     Taro.setStorageSync('avatarUrl', avatarUrl)
