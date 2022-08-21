@@ -5,9 +5,11 @@ import SourceItem from './SourceItem'
 import flag from './../assets/img/flag.png'
 
 export default function SourcesArea() {
+
+
   return (
     <View className='sourcesArea'>
-      <SourceItem sourceSrc={ flag } />
+      <SourceItem sourceSrc={flag} />
     </View>
   )
 }

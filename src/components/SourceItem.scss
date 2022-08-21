@@ -1,8 +1,13 @@
 .sourceItem {
+  height: 80px;
   .sourceItemImage {
-    width: 60px;
-    height: 40px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 3px #ccc;
+    box-sizing: border-box;
+    width: 120px;
+    height: 80px;
+    border: 2px solid #ccc;
+    // box-shadow: 0 0 3px #ccc;
+  }
+  &.active {
+    box-shadow: 0 0 4px 2px #3662EC;
   }
 }
